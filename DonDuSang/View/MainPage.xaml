@@ -16,6 +16,13 @@
       <CollectionView.ItemTemplate>
         <DataTemplate x:DataType="model:CentreDeDon">
           <HorizontalStackLayout Padding="10" Spacing="15">
+            <HorizontalStackLayout.GestureRecognizers>
+              <TapGestureRecognizer
+                Command="{Binding Source={RelativeSource
+                    AncestorType={x:Type vm:CentresDeDonViewModel}},
+                    Path=GoToDetailsCommand}"
+                CommandParameter="{Binding .}"/>
+            </HorizontalStackLayout.GestureRecognizers>
             <Image Source="don_sang.jpg" HeightRequest="100"/>
             <VerticalStackLayout VerticalOptions="Center">
               <Label Text="{Binding location_name}" FontSize="24"
